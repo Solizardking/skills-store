@@ -1,6 +1,6 @@
 /**
- * Prove user skill upload path: scanner draft validation + public save surface +
- * schema table name. Does not require a live database.
+ * Prove user skill upload path: public draft validation, authenticated save,
+ * and schema table name. Does not require a live database.
  *
  * Run: pnpm exec tsx skills-store/scripts/user-skills-upload.test.ts
  */
@@ -51,13 +51,16 @@ for (const needle of [
   }
 }
 
-// --- Public path gates allow validate/save without session ---
+// --- Only bounded, non-persisting validation is public; persistence is gated ---
 const routesTs = readFileSync(join(repoRoot, "server/routes.ts"), "utf8");
-if (!routesTs.includes("/api/skill-scanner/validate") || !routesTs.includes("/api/skill-scanner/save")) {
-  throw new Error("routes.ts public skills path must allow validate + save");
+if (!routesTs.includes("isPublicSkillScannerValidationPath")) {
+  throw new Error("routes.ts must expose the bounded public validation predicate");
 }
-if (!routesTs.includes("/api/skill-scanner/user-skills")) {
-  throw new Error("routes.ts public skills path must allow user-skills list");
+if (!routeSrc.includes('router.post("/save", requireSkillSaveAccess')) {
+  throw new Error("skill save must require an authenticated or scoped principal");
+}
+if (!routeSrc.includes('path === "/api/skill-scanner/validate"') || !routeSrc.includes('method.toUpperCase() === "POST"')) {
+  throw new Error("public scanner access must be limited to POST /validate");
 }
 
 // --- Schema tables exist in both schema sources ---
@@ -66,7 +69,7 @@ const drizzleSchema = readFileSync(join(repoRoot, "drizzle/schema.ts"), "utf8");
 if (!sharedSchema.includes('pgTable("user_skills"') || !drizzleSchema.includes('pgTable("user_skills"')) {
   throw new Error("user_skills table missing from schema sources");
 }
-const migration = join(repoRoot, "drizzle/migrations/0016_user_skills.sql");
+const migration = join(repoRoot, "drizzle/0016_user_skills.sql");
 if (!existsSync(migration)) {
   throw new Error("missing drizzle migration 0016_user_skills.sql");
 }
