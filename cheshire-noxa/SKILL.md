@@ -9,7 +9,7 @@ tags:
   - evm
   - cheshire
   - robinhood
-homepage: https://cheshireterminal.ai/noxa
+homepage: https://cheshireterminal.ai/pulse
 ---
 
 # cheshire-noxa
@@ -32,7 +32,7 @@ npx cheshire-noxa register --dry-run
 - `/api/noxa/pool`
 - `/api/noxa/quote`
 - `/api/evm/rpc`
-- `/noxa`
+- `/pulse` (EVM Pulse UI; legacy `/noxa-fun`, `/noxa`)
 
 ## SDK
 

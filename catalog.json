@@ -181,7 +181,7 @@
         "evm",
         "cheshire"
       ],
-      "homepage": "https://cheshireterminal.ai/noxa",
+      "homepage": "https://cheshireterminal.ai/pulse",
       "install": {
         "npm": "npm install @x402solana/cheshire-noxa",
         "register": "npx cheshire-noxa register",
