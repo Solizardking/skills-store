@@ -1,7 +1,7 @@
 {
   "schemaVersion": "cheshire-imported-skills/v1",
   "generatedFrom": "../skills",
-  "count": 1278,
+  "count": 1280,
   "skills": [
     {
       "slug": "1password",
@@ -92,6 +92,15 @@
       "path": "skills/agent-orchestration/run-deep-swe",
       "skillMdUrl": "/api/skills/agent-orchestration/run-deep-swe/SKILL.md",
       "storeSkillMdUrl": "/api/skills-store/agent-orchestration/run-deep-swe/SKILL.md"
+    },
+    {
+      "slug": "agentic-wallet",
+      "name": "agentic-wallet",
+      "description": "Crypto wallet operations via the awal CLI — sign in, check balances, send USDC/ETH/POL/SOL, trade tokens, fund the wallet, and use the x402 payment protocol to discover paid services, pay for API calls, monetize an API, or query onchain data. Use whenever the user mentions signing in, login, authentication, wallet status, balance, address, sending money, paying someone, transferring tokens, ENS names, swapping/trading/converting tokens, funding/topping up/onramp, USDC, ETH, POL, SOL, the x402 bazaar, paid APIs, monetizing an endpoint, or querying onchain data on Base.",
+      "version": null,
+      "path": "skills/agentic-wallet",
+      "skillMdUrl": "/api/skills/agentic-wallet/SKILL.md",
+      "storeSkillMdUrl": "/api/skills-store/agentic-wallet/SKILL.md"
     },
     {
       "slug": "agents-sdk",
@@ -4826,6 +4835,15 @@
       "path": "skills/public/api/skills/agent-orchestration/run-deep-swe",
       "skillMdUrl": "/api/skills/public/api/skills/agent-orchestration/run-deep-swe/SKILL.md",
       "storeSkillMdUrl": "/api/skills-store/public/api/skills/agent-orchestration/run-deep-swe/SKILL.md"
+    },
+    {
+      "slug": "public/api/skills/agentic-wallet",
+      "name": "agentic-wallet",
+      "description": "Crypto wallet operations via the awal CLI — sign in, check balances, send USDC/ETH/POL/SOL, trade tokens, fund the wallet, and use the x402 payment protocol to discover paid services, pay for API calls, monetize an API, or query onchain data. Use whenever the user mentions signing in, login, authentication, wallet status, balance, address, sending money, paying someone, transferring tokens, ENS names, swapping/trading/converting tokens, funding/topping up/onramp, USDC, ETH, POL, SOL, the x402 bazaar, paid APIs, monetizing an endpoint, or querying onchain data on Base.",
+      "version": null,
+      "path": "skills/public/api/skills/agentic-wallet",
+      "skillMdUrl": "/api/skills/public/api/skills/agentic-wallet/SKILL.md",
+      "storeSkillMdUrl": "/api/skills-store/public/api/skills/agentic-wallet/SKILL.md"
     },
     {
       "slug": "public/api/skills/agents-sdk",

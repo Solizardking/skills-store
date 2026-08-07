@@ -2,7 +2,7 @@
   "store": "cheshire-skills-store",
   "spec": "https://agentskills.io",
   "docsIndex": "https://agentskills.io/llms.txt",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "homepage": "https://cheshireterminal.ai/skills-store",
   "api": {
     "index": "/api/skills-store",
@@ -188,6 +188,42 @@
         "local": "npx skills add ./skills-store/cheshire-noxa"
       },
       "package": "@x402solana/cheshire-noxa"
+    },
+    {
+      "name": "agentic-wallet",
+      "description": "Coinbase Agentic Wallet (awal CLI): email OTP login/verify, status, balances, send USDC/ETH/POL/SOL, trade, fund, and x402 pay/search/monetize on Base/Polygon/Solana.",
+      "path": "agentic-wallet",
+      "version": "1.0.0",
+      "priority": "high",
+      "tags": [
+        "coinbase",
+        "awal",
+        "wallet",
+        "usdc",
+        "x402",
+        "auth",
+        "base",
+        "solana"
+      ],
+      "homepage": "https://github.com/coinbase/agentic-wallet-skills",
+      "source": "coinbase/agentic-wallet-skills",
+      "install": {
+        "official": "npx skills add coinbase/agentic-wallet-skills",
+        "local": "npx skills add ./skills-store/agentic-wallet",
+        "github": "npx skills add Solizardking/cheshire-terminal --path skills-store/agentic-wallet",
+        "community": "npx skills add ./skills/agentic-wallet"
+      },
+      "references": [
+        "references/auth.md",
+        "references/balance.md",
+        "references/send-usdc.md",
+        "references/trade.md",
+        "references/fund.md",
+        "references/x402-search.md",
+        "references/x402-pay.md",
+        "references/x402-monetize.md",
+        "references/query-onchain.md"
+      ]
     }
   ]
 }
