@@ -1,16 +1,16 @@
 # Skill Scanner Results
 
-Scanned at: 2026-07-11T23:24:37.145Z
+Scanned at: 2026-08-07T18:41:02.597Z
 
-- Skills scanned: 576
-- Local skills available: 576
-- On-chain skills: 396
-- Off-chain skills: 180
+- Skills scanned: 1285
+- Local skills available: 1285
+- On-chain skills: 923
+- Off-chain skills: 362
 - Verified skills: 0
 - Changed skills: 0
-- Missing verification: 576
-- Critical findings: 18
-- High findings: 1844
+- Missing verification: 1285
+- Critical findings: 36
+- High findings: 3844
 - Install telemetry source: not tracked locally
 
 ## On-Chain Registry
@@ -36,6 +36,8 @@ Scanned at: 2026-07-11T23:24:37.145Z
 - google-agent-registry: high risk, 9 findings, verification missing
 - helius-skills/helius-jupiter: high risk, 112 findings, verification missing
 - helius-skills/helius-phantom: high risk, 115 findings, verification missing
+- liquidity-planner: high risk, 13 findings, verification missing
+- moonpay-wallet-statusline: high risk, 25 findings, verification missing
 - notion: high risk, 12 findings, verification missing
 - nvidia/amc-setup-calibration-stack: high risk, 14 findings, verification missing
 - nvidia/deepstream-dev: critical risk, 85 findings, verification missing
@@ -61,5 +63,3 @@ Scanned at: 2026-07-11T23:24:37.145Z
 - nvidia/tao-run-automl: high risk, 16 findings, verification missing
 - nvidia/tao-run-on-slurm: high risk, 45 findings, verification missing
 - nvidia/tao-setup-nvidia-gpu-host: high risk, 51 findings, verification missing
-- nvidia/vss-deploy-dense-captioning: high risk, 25 findings, verification missing
-- nvidia/vss-deploy-detection-tracking-2d: critical risk, 36 findings, verification missing
