@@ -86,6 +86,46 @@ const skillsPage = readFileSync(join(repoRoot, "client/src/pages/SkillsPage.tsx"
 if (!skillsPage.includes("/skills/lab") || !skillsPage.includes("user-upload")) {
   throw new Error("SkillsPage must link to lab and recognize user-upload source");
 }
+const storePage = readFileSync(join(repoRoot, "client/src/pages/SkillsStorePage.tsx"), "utf8");
+for (const needle of [
+  "skills:publish",
+  "user-listed",
+  "userCount",
+  "/skills/lab",
+  "publishCli",
+]) {
+  if (!storePage.includes(needle)) {
+    throw new Error(`SkillsStorePage missing community publish surface: ${needle}`);
+  }
+}
+const storeRoute = readFileSync(join(repoRoot, "server/routes/skills-store.ts"), "utf8");
+for (const needle of [
+  "listUserListedSkills",
+  "listUserListedSkillsFromDisk",
+  'source: "user"',
+  "publishCli",
+  "userCount",
+]) {
+  if (!storeRoute.includes(needle)) {
+    throw new Error(`skills-store route missing user listing: ${needle}`);
+  }
+}
+const cliCommands = readFileSync(join(repoRoot, "cli/src/commands.mjs"), "utf8");
+for (const needle of [
+  "cmdSkillsPublish",
+  "cmdSkillsStore",
+  "cmdSkillsValidate",
+  "skills:publish",
+  "skillScannerSave",
+]) {
+  if (!cliCommands.includes(needle)) {
+    throw new Error(`CLI missing skills publish/list command: ${needle}`);
+  }
+}
+const saveRoute = readFileSync(join(repoRoot, "server/routes/skill-scanner.ts"), "utf8");
+if (!saveRoute.includes("storeUrl") || !saveRoute.includes("listedOnStore")) {
+  throw new Error("skill-scanner save must return store listing URLs");
+}
 const sitemap = readFileSync(join(repoRoot, "client/public/sitemap.xml"), "utf8");
 for (const path of ["/skills/lab", "/skills/scanner", "/skills-store"]) {
   if (!sitemap.includes(path)) throw new Error(`sitemap missing ${path}`);
