@@ -6,7 +6,8 @@ import { fileURLToPath } from "node:url";
 const storeRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const skillsRoot = join(storeRoot, "..", "skills");
 const ignored = new Set([".git", ".lake", ".vercel", "node_modules", "target", "dist", "__pycache__"]);
-const topLevelIgnored = new Set(["assets", "bin", "onchain", "public", "scripts"]);
+// Nested skills-store package mirrors under skills/ are curated at repo-root skills-store/.
+const topLevelIgnored = new Set(["assets", "bin", "onchain", "public", "scripts", "skills-store"]);
 
 function frontmatter(markdown) {
   if (!markdown.startsWith("---")) return {};
