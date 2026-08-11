@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const storeRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const skillsRoot = join(storeRoot, "..", "skills");
 const ignored = new Set([".git", ".lake", ".vercel", "node_modules", "target", "dist", "__pycache__"]);
+const topLevelIgnored = new Set(["assets", "bin", "onchain", "public", "scripts"]);
 
 function frontmatter(markdown) {
   if (!markdown.startsWith("---")) return {};
@@ -38,6 +39,7 @@ function visit(dir) {
   }
   for (const entry of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
     if (!entry.isDirectory() || entry.name.startsWith(".") || ignored.has(entry.name)) continue;
+    if (dir === skillsRoot && topLevelIgnored.has(entry.name)) continue;
     visit(join(dir, entry.name));
   }
 }
